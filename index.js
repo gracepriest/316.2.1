@@ -7,12 +7,7 @@
 //will be base on a rock,paper,sissor
 
 //need global
-var character = {
-    name: " ",
-    class: " ",
-    health: 100
 
-}
 
 
 function updateBtn(){
@@ -47,6 +42,12 @@ for(let radioButton of radioGroup)
 
 function goNext()
 {
+    let character = {
+        name: "",
+        class: "",
+        health: 100
+    
+    }
     let radioGroup = document.getElementsByName("Btnchar")
     //prompt for character name
     character.name = prompt("Enter character name")
@@ -54,11 +55,27 @@ function goNext()
         {
             if(radioButton.checked)
             {
+                
                  character.class = radioButton.value
+                 window.alert(character.name +" This class you choice is " + character.class)
+                 
             }
         }
+       
+        // //only way to save info is with parameters
+        // //im sure we cover this in the lesson plan
+        // const jsonString = JSON.stringify(character)
+        // const endcoded = encodeURIComponent(jsonString)
 
-    window.location = "battle.html"
+    window.location.href = "battle.html"
 }
+
+
+
+
+
+
+
+
 
 
